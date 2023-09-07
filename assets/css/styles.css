@@ -405,7 +405,7 @@ header {
     1 - Footer
 ------------------------------------*/
 footer {
-    background: url(https://img.freepik.com/free-photo/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product_1258-54682.jpg?w=740&t=st=1693921587~exp=1693922187~hmac=b877391f505c15d7b3eef71d6ec8683881f763075456b2effedbf3218845599d) center center/cover no-repeat #0c0c1d;
+    background: url("/assets/images/purplebg.jpg") center center/cover no-repeat #0c0c1d;
   }
   
   /*-----------------------------------
