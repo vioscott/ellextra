@@ -1,0 +1,240 @@
+button {
+  color: azure;
+  background-color: #26264b;
+}
+.btn-primary {
+    color: azure;
+  background-color: #26264b;
+  border: #26264b;
+}
+.btn-primary:hover{
+    background-color: #ee1515;
+    border: #ee1515;
+}
+
+/* CSS rules for responsiveness */
+
+/* Small screens (e.g., smartphones) */
+@media screen and (max-width: 767px) {
+    /* Adjust table styles for small screens */
+    #userTable {
+        font-size: 14px;
+    }
+
+    /* Center-align table headers */
+    #userTable th {
+        text-align: center;
+    }
+
+    /* Center-align table cells */
+    #userTable td {
+        text-align: center;
+    }
+
+    /* Make the form elements stack on top of each other */
+    #deleteUserID,
+    #editUserID,
+    #editUserBalance {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Adjust table styles for medium screens */
+    #userTable {
+        font-size: 16px;
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media screen and (min-width: 1024px) {
+    /* Adjust table styles for large screens */
+    #userTable {
+        font-size: 18px;
+    }
+
+    /* Center-align table headers */
+    #userTable th {
+        text-align: center;
+    }
+
+    /* Center-align table cells */
+    #userTable td {
+        text-align: center;
+    }
+
+    /* Reset the form elements to inline-block for large screens */
+    #deleteUserID,
+    #editUserID,
+    #editUserBalance,
+    #deleteUser,
+    #editUser {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+
+/* Add these CSS rules for responsiveness */
+
+/* Small screens (e.g., smartphones) */
+@media screen and (max-width: 767px) {
+    /* Adjust header styles for small screens */
+    header h1 {
+        font-size: 24px;
+    }
+
+    /* Center-align navigation links */
+    nav ul {
+        text-align: center;
+    }
+
+    /* Stack navigation links on top of each other */
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Center-align main content */
+    main {
+        text-align: center;
+    }
+
+    /* Reduce padding for main sections */
+    section {
+        padding: 10px;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Adjust header styles for medium screens */
+    header h1 {
+        font-size: 36px;
+    }
+
+    /* Center-align navigation links */
+    nav ul {
+        text-align: center;
+    }
+
+    /* Center-align main content */
+    main {
+        text-align: center;
+    }
+
+    /* Increase padding for main sections */
+    section {
+        padding: 20px;
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media screen and (min-width: 1024px) {
+    /* Reset header font size for large screens */
+    header h1 {
+        font-size: 48px;
+    }
+
+    /* Reset navigation link styles for large screens */
+    nav ul {
+        text-align: left;
+    }
+
+    /* Reset main content alignment for large screens */
+    main {
+        text-align: left;
+    }
+
+    /* Reset padding for main sections for large screens */
+    section {
+        padding: 30px;
+    }
+}
+
+
+/* Add these CSS rules for responsiveness */
+
+/* Small screens (e.g., smartphones) */
+@media screen and (max-width: 767px) {
+    /* Adjust header styles for small screens */
+    header h2 {
+        font-size: 24px;
+    }
+
+    /* Stack form elements on top of each other */
+    #deleteUserID,
+    #deleteUser,
+    #editUserID,
+    #editUserBalance,
+    #editUser {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Center-align table headers */
+    #transactionTable th {
+        text-align: center;
+    }
+
+    /* Center-align table cells */
+    #transactionTable td {
+        text-align: center;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Adjust header styles for medium screens */
+    header h2 {
+        font-size: 36px;
+    }
+
+    /* Reset form elements to inline-block for medium screens */
+    #deleteUserID,
+    #deleteUser,
+    #editUserID,
+    #editUserBalance,
+    #editUser {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    /* Center-align table headers */
+    #transactionTable th {
+        text-align: center;
+    }
+
+    /* Center-align table cells */
+    #transactionTable td {
+        text-align: center;
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media screen and (min-width: 1024px) {
+    /* Reset header font size for large screens */
+    header h2 {
+        font-size: 48px;
+    }
+
+    /* Reset form elements to inline-block for large screens */
+    #deleteUserID,
+    #deleteUser,
+    #editUserID,
+    #editUserBalance,
+    #editUser {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    /* Reset table alignment for large screens */
+    #transactionTable th,
+    #transactionTable td {
+        text-align: center;
+    }
+}
