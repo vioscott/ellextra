@@ -3,111 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Withdrawal Form</title>
-    <!-- Link to Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <style>
-        /* Center the modal vertically and horizontally */
-        .modal {
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Custom dropdown style */
-        .custom-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .custom-dropdown select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            cursor: pointer;
-        }
-
-        /* Style the dropdown options */
-        .custom-dropdown select option {
-            background-color: #fff;
-        }
-
-        /* Style the options on hover */
-        .custom-dropdown select option:hover {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>withdrawal</title>
 </head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .progress{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .step{
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+    .step.active{
+        background-color: #007bff;
+        color: #fff;
+    }
+    .form{
+        width: 300px;
+        margin: 0 auto;
+    }
+    .step-form{
+        display: none;
+    }
+    .step-form.active{
+        display: block;
+    }
+    button{
+        margin-top: 10px;
+    }
+</style>
 <body>
-
-<!-- Button to trigger the modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#withdrawalModal">
-    Withdraw
-</button>
-
-<!-- Modal -->
-<div class="modal" id="withdrawalModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Withdrawal Form</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <div class="progress">
+        <div class="step active">1</div>
+        <div class="step">2</div>
+        <div class="step">3</div>
+    </div>
+    <div class="form">
+        <div class="step-form">
+            <h2>Enter Amount</h2>
+            <div class="form-group">
+                <label for="withdrawalAmount">Withdrawal Amount:</label>
+                <input type="number" class="form-control" id="withdrawalAmount" placeholder="Enter withdrawal amount">
             </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="userID">UserID:</label>
-                        <input type="text" class="form-control" id="userID" placeholder="Enter your UserID">
-                    </div>
-                    <div class="form-group custom-dropdown">
-                        <label for="walletType">Wallet Type:</label>
-                        <select id="walletType">
-                            <option value="Bitcoin">Bitcoin</option>
-                            <option value="Ethereum">Ethereum</option>
-                            <option value="Litecoin">Litecoin</option>
-                            <!-- Add more wallet options as needed -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="walletPhrase">Wallet Phrase:</label>
-                        <input type="text" class="form-control" id="walletPhrase" placeholder="Enter your Wallet Phrase">
-                    </div>
-                    <div class="form-group">
-                        <label for="withdrawalAmount">Withdrawal Amount:</label>
-                        <input type="text" class="form-control" id="withdrawalAmount" placeholder="Enter withdrawal amount">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="paymentCurrency">Payment Currency:</label>
-                        <input type="text" class="form-control" id="paymentCurrency" placeholder="Enter payment currency">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+            <div class="form-group">
+                <label for="walletType">Payment Currency:</label>
+                <select class="form-control" id="paymentCurrency">
+                    <option value="Bitcoin">Bitcoin</option>
+                    <option value="Ethereum">Ethereum</option>
+                    <option value="Litecoin">Litecoin</option>
+                    <option value="Ripple">Ripple</option>
+                </select>
             </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button id="nextBtn">Next</button>
+        </div>
+        <div class="step-form">
+            <h2>Confirm Details</h2>
+            <input type="text" class="form-control" id="userID" placeholder="Enter your UserID">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Confirm your email">
             </div>
+            <div class="form-group">
+                <label for="email">Wallet Address:</label>
+                <input type="text" class="form-control" id="WalletAddress" placeholder="Confirm your Wallet">
+            </div>
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn2">Next</button>
+        </div>
+        <div class="step-form">
+            <h2>Confirm Withdrawal</h2>
+            <p>Amount: <span id="displayAmount"></span></p>
+            <div class="form-group">
+                <label for="email">Wallet Address:</label>
+                <input type="text" class="form-control" id="WalletAddress" placeholder="Confirm your Wallet">
+            </div>
+            <div class="form-group">
+                <label for="walletPhrase">Wallet Phrase:</label>
+                <textarea name="" class="form-control" id="walletPhrase" placeholder=""></textarea>
+            </div>
+            <div class="form-group custom-drop-down">
+                <label for="walletType">Wallet Type:</label>
+                <select class="form-control" id="walletType">
+                    <option value="Bitcoin">Trust Wallet</option>
+                    <option value="Ethereum">Metamask Wallet</option>
+                    <option value="Litecoin">Safepal Wallet</option>
+                </select>
+            </div>
+            <button id="prevBtn2">Previous</button>
+            <button type="submit" id="withdraw">Withdraw</button>
         </div>
     </div>
-</div>
 
-<!-- Link to Bootstrap JS and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+  const steps = document.querySelectorAll(".step");
+  const stepForms = document.querySelectorAll(".step-form");
+  let currentStep = 0;
 
+  function updateProgress(){
+      steps.forEach((step, index) => {
+          if(index < currentStep){
+              step.classList.add("active");
+          } else {
+              step.classList.remove("active");
+          }
+      });
+  }
+  function showStep(stepIndex){
+      stepForms.forEach((form, index) => {
+          if(index === stepIndex){
+              form.classList.add("active");
+              console.log("success");
+          } else {
+              form.classList.remove("active");
+              console.log("failed");
+          }
+      });
+  }
+
+  showStep(currentStep);
+
+  const nextBtn = document.getElementById("nextBtn");
+  const nextBtn2 = document.getElementById("nextBtn2");
+  const prevBtn = document.getElementById("prevBtn");
+  const prevBtn2 = document.getElementById("prevBtn2");
+  const withdrawalAmountInput = document.getElementById("withdrawalAmount");
+  const displayAmount = document.getElementById("displayAmount");
+
+  nextBtn.addEventListener("click", function () {
+    if (currentStep === 0 && withdrawalAmountInput.value.trim() !== "") {
+      displayAmount.textContent = withdrawalAmountInput.value;
+    }
+    currentStep++;
+    updateProgress();
+    showStep(currentStep);
+  });
+
+  nextBtn2.addEventListener("click", function(){
+          currentStep++;
+          updateProgress();
+          showStep(currentStep);
+      });
+
+  prevBtn.addEventListener("click", function(){
+      currentStep--;
+      updateProgress();
+      showStep(currentStep);
+  });
+
+  prevBtn2.addEventListener("click", function(){
+      currentStep--;
+      updateProgress();
+      showStep(currentStep);
+  });
+})
+    </script>
 </body>
 </html>

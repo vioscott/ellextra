@@ -628,6 +628,10 @@ strong {
 .custom-block-bottom {
   background: var(--section-bg-color);
   text-align: center;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin-bottom: 30px;
 }
 
 .custom-block.custom-block-bottom small {
@@ -636,6 +640,7 @@ strong {
 
 .custom-block-bottom-item {
   flex: auto;
+  padding-bottom: 20px;
 }
 
 .custom-block-icon {
@@ -1253,4 +1258,77 @@ modal
 .custom-dropdown select option:hover {
     background-color: #ee1515;
     color: #ececec;
+}
+
+/* packages */
+
+.price-card{
+  border: 1px solid #0c013d5c;
+  border-radius: 10px;
+  padding: 12%;
+  text-align: left;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+.price-card h4{
+  margin-left: 20px;
+  color: #0c013d;
+  font-size: 22px;
+}
+.price-card .pkg-pkg-btn{
+  width: 59%;
+  padding: 15px;
+}
+.price-card h6{
+  margin: 15px 0;
+}
+#packages{
+  max-width: 100%;
+  padding: 5% 12%;
+}
+#packages .pkg-header{
+  margin-bottom: 80px;
+}
+#packages .pkg-header h2{
+  font-family: 900;
+  font-size: 30px;
+  color: #0c013d;
+  margin-bottom: 20px;
+}
+#copyBtn {
+  text-transform: capitalize;
+}
+/* withdrawal progress  */
+.progress{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  height: 30px;
+  background: none;
+}
+.step{
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.step.active{
+  background-color: #ec3030;
+  color: #fff;
+}
+.form{
+  width: 300px;
+  margin: 0 auto;
+}
+.step-form{
+  display: none;
+}
+.step-form.active{
+  display: block;
+}
+.step-form button{
+  margin: 10px 20px;
 }
